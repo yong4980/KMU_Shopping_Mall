@@ -10,7 +10,7 @@ class CashPayment(payment.Payment): #상속
         
     def requestPayment(self, price): #Overriding
         self.amount = price
-        print("무통장 결제를 진행합니다.", self.amount)
+        print(self.amount, "원의 무통장 결제를 진행합니다.")
         self.accountBank = input("은행명을 입력해주세요 >> ")
         self.accountNum = input("계좌번호를 입력해주세요 >> ")
         result = self.account.checkAccount(self.accountBank, self.accountNum)

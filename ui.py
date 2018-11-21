@@ -16,6 +16,8 @@ class Ui:
         for i in temp_list:
             total += i[1]
         print("카트에 담겨 있는 상품의 총 금액은 ", total, "원입니다.")
+        if total == 0:
+            return
         ch = int(input('바로 구매하시려면 1, 계속 쇼핑하시려면 2를 입력해주세요.'))
         if ch == 1:
             result = self.orderUi.order(total)
@@ -59,7 +61,7 @@ if __name__ == '__main__':
     ui = Ui()
     ui.logIn();
     while 1 :
-        ch = int(input("계속 쇼핑하시려면 1, 장바구니를 보시려면 2, 쇼핑을 종료하시려면 3을 입력해주세요"))
+        ch = int(input("상품을 보시려면 1, 장바구니를 보시려면 2, 쇼핑을 종료하시려면 3을 입력해주세요"))
         if ch == 1:
             ui.getProductInfo();
         elif ch == 2:
