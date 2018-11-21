@@ -1,6 +1,7 @@
 from product import Product
 from cart import Cart
 import orderCtrl
+import loginSession
 
 class Ui:
     def __init__(self):
@@ -51,8 +52,18 @@ class Ui:
             
 
     def logIn(self):
-        #login = LoginSession()
-        print("로그인 완료")
+        ch = int(input('회원가입은 1, 로그인은 2를 입력해주세요'))
+        if ch == 1:
+            login = loginSession.LoginSessionCtrl()
+            login.makeID()
+        
+        while 1:
+            login = loginSession.LoginSessionCtrl()
+            login.checkID()
+            login.checkPW()
+            result = login.isSafe()
+            if result == 1:
+                break
         
 
         

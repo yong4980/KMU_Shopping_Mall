@@ -15,6 +15,6 @@ class OrderCtrl:
             result = self.card.requestPayment(self.amount)
         elif ch == 2:
             result = self.cash.requestPayment(self.amount)
-            return result
+        return result
             
         
