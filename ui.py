@@ -18,7 +18,9 @@ class Ui:
         print("카트에 담겨 있는 상품의 총 금액은 ", total, "원입니다.")
         ch = int(input('바로 구매하시려면 1, 계속 쇼핑하시려면 2를 입력해주세요.'))
         if ch == 1:
-            self.orderUi.order(total)
+            result = self.orderUi.order(total)
+            if result == 1 :
+                self.cart.clearList()   
         else:
             pass
             

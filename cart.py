@@ -8,6 +8,6 @@ class Cart():
     def addItemToList(self, item):
         self.cartList.append(item)
         
-    def removeItemToList(self):
-        Shop_list.remove(item)
-        print(Shop_list)
+    def clearList(self):
+        self.cartList.clear()
+        

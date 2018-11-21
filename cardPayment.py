@@ -1,8 +1,14 @@
+import payment
+import creditCard
 
-class CardPayment:
+class CardPayment(payment.Payment): #상속
     def __init__(self):
-        self.amount = 0
+        super().__init__()
+        self.account = creditCard.CreditCard()
         
-    def payment(self, price):
+    def requestPayment(self, price): #overriding
         self.amount = price
-        print("card", self.amount)
+        print("카드 결제를 진행합니다.", self.amount)
+    
+    
+        
